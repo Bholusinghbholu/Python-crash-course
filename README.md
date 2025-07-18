@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="[https://nostarch.com/sites/default/files/styles/uc_product/public/PythonCrashCourse2e_cover_front.png](https://m.media-amazon.com/images/I/71pys4B4OVL._UF894,1000_QL80_FMwebp_.jpg)" alt="Python Crash Course Book Cover" width="300"/>
+  <img src="https://m.media-amazon.com/images/I/71pys4B4OVL._UF894,1000_QL80_FMwebp_.jpg" alt="Python Crash Course Book Cover" width="300"/>
 </p>
 
 <h1 align="center">🐍 Python Crash Course Solutions</h1>
