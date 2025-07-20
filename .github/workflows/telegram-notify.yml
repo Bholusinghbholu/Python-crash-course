@@ -1,0 +1,28 @@
+name: Telegram Notify
+on:
+  push:
+    branches:
+      - main # Change if your branch is not 'main'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram Message and Auto Delete
+        run: |
+          # Send message and capture response
+          response=$(curl -s -X POST "https://api.telegram.org/bot8036869840:AAGiEdvHI4z7VOWvubnTQWUOdzGgKJ7KUlk/sendMessage" \
+          -d chat_id=6364466324 \
+          -d text="🚀 *New push to Python-crash-course*\n👤 By: *${{ github.actor }}*\n📝 Commit: *${{ github.event.head_commit.message }}*" \
+          -d parse_mode=Markdown)
+
+          # Extract message_id from the response
+          MESSAGE_ID=$(echo $response | jq '.result.message_id')
+
+          # Wait for 30 seconds
+          sleep 30
+
+          # Delete the message
+          curl -s -X POST "https://api.telegram.org/bot8036869840:AAGiEdvHI4z7VOWvubnTQWUOdzGgKJ7KUlk/deleteMessage" \
+          -d chat_id=6364466324 \
+          -d message_id=$MESSAGE_ID
