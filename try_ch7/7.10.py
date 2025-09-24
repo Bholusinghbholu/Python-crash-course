@@ -1,3 +1,4 @@
+#polling program for cities
 print("If you could visit one place in the world, where would you go?")
 
 cities = ["Delhi", "Mumbai", "Kolkata", "Hampi"]
@@ -17,6 +18,7 @@ for i, city in enumerate(cities, start=1):
 print("\n:: Enter your vote (1-4) or 'q' to quit ::")
 active = True
 
+#prompt loop
 while active:
     current = input(": ")
 
@@ -31,6 +33,7 @@ while active:
         active = False
 
     else:
+#counting
         poll.append(current)
 
         if current == '1':
@@ -43,3 +46,5 @@ while active:
             Hampi.append(current)
         else:
             null.append(current)
+#end
+
